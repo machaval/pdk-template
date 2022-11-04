@@ -1,4 +1,5 @@
 ---
+# This descriptor is used in local mode to describe how shape of configuration of the policy needs to be.
 apiVersion: gateway.mulesoft.com/v1alpha1
 kind: Extension
 metadata:
@@ -9,8 +10,10 @@ spec:
     - name: envoy-filter
     - name: proxy-wasm-filter
   properties:
+    {% if useconfig -%}
     header_name:
       type: string
+    {% endif -%}
    #Required fields for wasm based policies
     rootId:
       type: string
