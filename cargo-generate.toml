@@ -1,0 +1,23 @@
+[template]
+cargo_generate_version = ">=0.10.0"
+ignore = [
+    ".git",
+    ".github",
+    ".idea"
+]
+
+[placeholders.useconfig]
+type    = "bool"
+prompt  = "Specify if policy is going to use configuration?"
+default = true
+
+ignore = [
+    ".devcontainer/",
+    ".vscode/launch.json",
+    ".vscode/tasks.json",
+    "docs/",
+    "scripts/",
+    ".dockerignore",
+    ".gitpod.Dockerfile",
+    ".gitpod.yml",
+]

@@ -1,0 +1,23 @@
+---
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: Extension
+metadata:
+  name: simplest-header-injection
+spec:
+  extends:
+    - name: extension-definition
+    - name: envoy-filter
+    - name: proxy-wasm-filter
+  properties:
+    header_name:
+      type: string
+   #Required fields for wasm based policies
+    rootId:
+      type: string
+      default: main
+    implementation:
+      type: string
+      default: base64://<ENCODED>
+  required:
+    - header_name
+
